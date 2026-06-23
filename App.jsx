@@ -966,7 +966,7 @@ function AdminDashboard({ submissions, loading, readIds, onUpdate, onMarkRead, o
   const total = submissions.length;
   const monthCount = submissions.filter(d => thisMonth(d.createdAt)).length;
   const newCount = submissions.filter(d => d.status === "신규 접수").length;
-  const agendaCount = submissions.filter(d => d.status === "위원회 안건 후보").length;
+  const agendaCount = submissions.filter(d => d.isCommitteeAgenda).length;
   const doneCount = submissions.filter(d => d.status === "조치 완료").length;
   const urgentCount = submissions.filter(d => d.urgency === "긴급").length;
   const unreadCount = submissions.filter(d => !readIds.has(d.id)).length;
